@@ -1,11 +1,11 @@
-About pyspelling
-================
+About pyspelling-feedstock
+==========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pyspelling-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/facelessuser/pyspelling
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pyspelling-feedstock/blob/main/LICENSE.txt)
 
 Summary: Spell checker
 

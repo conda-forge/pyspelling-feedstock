@@ -1,5 +1,5 @@
 {% set name = "pyspelling" %}
-{% set version = "2.8.2" %}
+{% set version = "2.9" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pyspelling-{{ version }}.tar.gz
-  sha256: 823afba99a77de58c1fc53b3cac712bb2335dacee410a1a14d150e94d3439f3e
+  sha256: df74c42e6e24171b7e1a83ac62fa2e151028ac045817c4f0384791c2d6099c5c
   patches:
     - no_versioned_entrypoint.patch
 
@@ -21,18 +21,18 @@ build:
 
 requirements:
   host:
-    - python >=3.6
-    - pip
+    - python >=3.8
     - hatchling >=0.21.1
+    - pip
   run:
-    - python >=3.6
+    - python >=3.8
     - beautifulsoup4
-    - html5lib
-    - lxml
+    - soupsieve >=1.8
     - markdown
     - pyyaml
-    - soupsieve >=1.8
-    - wcmatch >=6.0.3
+    - wcmatch >=8.5
+    - lxml
+    - html5lib
 
 test:
   imports:
