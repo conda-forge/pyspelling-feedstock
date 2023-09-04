@@ -21,18 +21,18 @@ build:
 
 requirements:
   host:
-    - python >=3.6
-    - pip
+    - python >=3.8
     - hatchling >=0.21.1
+    - pip
   run:
-    - python >=3.6
+    - python >=3.8
     - beautifulsoup4
-    - html5lib
-    - lxml
+    - soupsieve >=1.8
     - markdown
     - pyyaml
-    - soupsieve >=1.8
-    - wcmatch >=6.0.3
+    - wcmatch >=8.5
+    - lxml
+    - html5lib
 
 test:
   imports:
