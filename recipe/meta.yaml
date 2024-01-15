@@ -1,5 +1,5 @@
 {% set name = "pyspelling" %}
-{% set version = "2.9" %}
+{% set version = "2.10" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pyspelling-{{ version }}.tar.gz
-  sha256: df74c42e6e24171b7e1a83ac62fa2e151028ac045817c4f0384791c2d6099c5c
+  sha256: acd67133c1b7cecd410e3d4489e61f2e4b1f0b6acf1ae6c48c240fbb21729c37
   patches:
     - no_versioned_entrypoint.patch
 
