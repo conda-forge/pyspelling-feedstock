@@ -7,13 +7,13 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pyspelling-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pyspelling-{{ version }}.tar.gz
   sha256: acd67133c1b7cecd410e3d4489e61f2e4b1f0b6acf1ae6c48c240fbb21729c37
   patches:
     - no_versioned_entrypoint.patch
 
 build:
-  number: 0
+  number: 1
   noarch: python
   entry_points:
     - pyspelling=pyspelling.__main__:main
@@ -21,11 +21,11 @@ build:
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - hatchling >=0.21.1
     - pip
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - beautifulsoup4
     - soupsieve >=1.8
     - markdown
@@ -43,6 +43,7 @@ test:
     - pyspelling --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/facelessuser/pyspelling
