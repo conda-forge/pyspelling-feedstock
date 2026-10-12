@@ -7,7 +7,7 @@ Home: https://github.com/facelessuser/pyspelling
 
 Package license: MIT
 
-Summary: Spell checker
+Summary: Spell checker.
 
 Current build status
 ====================
