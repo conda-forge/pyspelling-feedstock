@@ -1,0 +1,57 @@
+schema_version: 1
+
+context:
+  python_min: "3.11"
+  version: "2.13"
+
+package:
+  name: pyspelling
+  version: ${{ version }}
+
+source:
+  url: https://files.pythonhosted.org/packages/source/p/pyspelling/pyspelling-${{ version }}.tar.gz
+  sha256: 6464afb9da9d3fd35b11a47d0297b67f4f1e3ba73a98d948326b34a85deb4ab1
+
+build:
+  number: 0
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv
+  python:
+    entry_points:
+      - pyspelling=pyspelling.__main__:main
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - hatchling >=0.21.1
+    - pip
+  run:
+    - python >=${{ python_min }}
+    - beautifulsoup4
+    - soupsieve >=3.0.1
+    - markdown
+    - pyyaml
+    - wcmatch >=8.5
+    - lxml
+    - html5lib
+
+tests:
+  - python:
+      imports:
+        - pyspelling
+      pip_check: true
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
+    script:
+      - pyspelling --help
+
+about:
+  summary: Spell checker.
+  license: MIT
+  license_file: LICENSE.md
+  homepage: https://github.com/facelessuser/pyspelling
+
+extra:
+  recipe-maintainers:
+    - ocefpaf
